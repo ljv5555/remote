@@ -7,17 +7,26 @@
 <script src="js/jquery.js"></script>
 <script src="js/underscore.js"></script>
 <script src="js/main.js"></script>
-<style>textarea:margin:1em;width: calc( 100% - 1em );</style>
+<style>textarea,e1,e2{margin:1em;width: calc( 100% - 1em );}
+e1,e2{background:rgba(10,10,250,200);}
+</style>
 </head>
 <body>
-	<div class="block b1">class="block b1"<br/><textarea></textarea>
+	<div class="block b1">class="block b1"<br/><textarea><roote><e1 dbid="1">contents of e1</e1><e2 dbid="2">contents of e2</e2></roote></textarea>
 	</div>
 	<div class="block b2">class="block b2"<br/><textarea></textarea>
 	</div>
 	<div class="block b3">Code:<br/>
-	<textarea class="code"></textarea>
+	<textarea class="code">$('.block.b4 textarea').first().val('The contents of the first element in b1 with the attribute dbid is: '
+	+$($('.block.b1 textarea').val()).find('*[dbid]').html()
+	+'\nThe dbid is: '
+	+$($('.block.b1 textarea').val()).find('*[dbid]').attr('dbid')
+	+'\n\n');
+	
+	</textarea>
+	<br/><input type="button" onclick="try{eval($('.code').val());}catch(ex){$('.result').val($('.code').val('Error: '+ex.message));}" value="Run Code"/>
 	</div>
-	<div class="block b4">class="block b4"<br/><textarea></textarea>
+	<div class="block b4">class="block b4" (result)<br/><textarea class="result"></textarea>
 	</div> 
 </body>
 </html>
