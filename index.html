@@ -2,39 +2,28 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>STCode ArrayToWav</title>
+<title>simple remote desktop</title>
 <link href="css/styles.css" media="all" rel="stylesheet" type="text/css" />
 <script src="js/jquery.js"></script>
 <script src="js/underscore.js"></script>
-<script src="js/rwave.js"></script>
 <script src="js/main.js"></script>
+<script>
+function jseval(s)
+{
+	var rtn = null;
+	
+	return rtn;
+}
+</script>
 </head>
 <body>
-
-	<div class="block">
-		<input class="pfmb blu" type="button"
-			onclick="/*pwmServoControl.*/loadPWMData();" value="1. Load PWM Data" />
+	<div class="block b1">simple remote desktop</div>
+	<div class="block b2">
+		
 	</div>
-	<div class="block">
-		<input disabled="disabled" class="pfmb blu" type="button"
-			onclick="window.d=(window.getWavUrlsFromDataArrays(window.largeControlArrays));window.formatu();"
-			value="2. convert to wav: " /> frequency (Hz):<input type="number"
-			id="frequency" min="1e-12" value="44100" /> Duty Cycle (0.0-1.0<em>
-			or .10-.20 for servo</em>):<input type="number" id="dutycycle" min="0"
-			value=".15" />
+	<div class="block b3">
 	</div>
-	<div class="block">
-
-		<input disabled="disabled" class="pfmb blu" type="button"
-			onclick="window.d=(window.getWavUrlsFromDataArrays(window.largeControlArrays));window.formatu();"
-			value="get long wav urls for percent values for rc servos..." />
+	<div class="block b4">
 	</div>
-	<div class="block">
-		<input id="cmdin"/>
-		<button type="button" onclick="runInWorker(jQuery('#cmdin').val());"></button>
-		<textarea  class="datata w100 h20 pmfb blu br1"></textarea>
-	</div>
-
 </body>
 </html>
-get_servo_pwm_period_array
